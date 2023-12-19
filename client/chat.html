@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <title>Skull Py Chat</title>
+
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<py-script src="/client/chat.py"></py-script>
+<div class="d-flex">
+	<div class="container-xl">
+		<div class="input-group my-3">
+			<span class="input-group-text">Имя:</span>
+			<div class="col-sm">
+				<input
+					id="sender"
+					type="text"
+					class="form-control"
+					placeholder="Введите имя">
+			</div>
+			<button
+				id="confirm_sender"
+				class="btn btn-primary">
+				Подтвердить
+			</button>
+		</div>
+		<div
+			id="message_group"
+			class="input-group mb-3"
+			>
+			<input
+				id="message_text"
+				name="text"
+				type="text"
+				class="form-control"
+				placeholder="Текст сообщения">
+			<button
+				id="send_message"
+				class="btn btn-primary"
+                disabled
+                >
+				<i class="bi bi-send-fill"></i> Отправить
+			</button>
+		</div>
+        <div class="d-flex" style="justify-content: space-around;">
+            <div>
+                <h3>
+                    Активные пользователи
+                </h3>
+                <ul id="user_list" class="list-group list-group-flush"></ul>
+            </div>
+            <div>
+                <h3>
+                    Сообщения
+                </h3>
+                <ul id="chat_window" class="list-group"></ul>
+            </div>
+        </div>
+		
+	</div>
+</div>
+</body>
+</html>
